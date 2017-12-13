@@ -2,6 +2,7 @@
 import os
 
 from flask import Flask, render_template
+
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
@@ -9,7 +10,8 @@ from wtforms import SubmitField
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'I have a dream'
-app.config['UPLOADED_PHOTOS_DEST'] = os.getcwd()
+#app.config['UPLOADED_PHOTOS_DEST'] = os.getcwd()
+app.config['UPLOADED_PHOTOS_DEST'] = '/Users/zhaoleiwang/PycharmProjects/CloudDisk/photos/'
 
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)

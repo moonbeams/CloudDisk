@@ -7,9 +7,11 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms import SubmitField
 
+DEST = 'E:\PycharmProject\CloudDisk'
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'I have a dream'
-app.config['UPLOADED_PHOTOS_DEST'] = os.getcwd()
+app.config['UPLOADED_PHOTOS_DEST'] = DEST
 
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)
